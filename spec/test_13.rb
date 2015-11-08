@@ -17,8 +17,11 @@ describe Unit do
       expect(enemy_unit.health_points).to eq(100)
     end
   
-    it "should not be able to attack a dead enemy"
-
+    it "should not be able to attack a dead enemy" do
+      enemy_unit = Unit.new(0, 10)
+      @unit.attack!(enemy_unit)
+      expect(enemy_unit.health_points).to eq(0)
+    end
 
   end
   

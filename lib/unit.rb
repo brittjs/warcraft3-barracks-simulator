@@ -1,6 +1,6 @@
 class Unit 
 
-attr_accessor :attack_power, :health_points
+  attr_accessor :attack_power, :health_points
 
   def initialize(health_points, attack_power)
     @health_points = health_points
@@ -8,7 +8,7 @@ attr_accessor :attack_power, :health_points
   end
 
   def attack!(enemy)
-    unless self.dead?
+    unless self.dead? || enemy.dead?
       enemy.damage(attack_power)
     end
   end
@@ -22,7 +22,5 @@ attr_accessor :attack_power, :health_points
   end
 
 end
-
-
 
 

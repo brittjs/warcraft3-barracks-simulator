@@ -52,6 +52,7 @@ describe Barracks do
       expect(@barracks).to receive(:can_train_peasant?).and_return(false)
       expect(@barracks.train_peasant).to be_nil
     end
+    
     it "trains a peasant if there are enough resources" do
       expect(@barracks).to receive(:can_train_peasant?).and_return(true)
       expect(@barracks.train_peasant).to be_a(Peasant)
